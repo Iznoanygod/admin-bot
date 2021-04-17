@@ -3,7 +3,9 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <string>
 #include <dlfcn.h>
+#include <libconfig.h>
 #include <unordered_map>
 
 #include "sleepy_discord/sleepy_discord.h"
@@ -12,5 +14,6 @@
 #include "globals.h"
 
 void* loadModule(char* module_name);
+int unloadModule(char* module_name);
 
 #endif

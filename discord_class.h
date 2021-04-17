@@ -1,12 +1,12 @@
 #ifndef _DISCORD_CLASS_H_
-#define _DISCORD_CLSAS_H_
+#define _DISCORD_CLASS_H_
 
-class DiscordClass : public SleepyDiscord::DiscordClient {
-    public:
-        using SleepyDiscord::DiscordClient::DiscordClient;
-        void onMessage(SleepyDiscord::Message message) override {
-
-        }
+class MyClientClass : public SleepyDiscord::DiscordClient {
+public:
+    using SleepyDiscord::DiscordClient::DiscordClient;
+    void onMessage(SleepyDiscord::Message message) override {
+        if(message.startsWith("!admin"))
+            sendMessage(message.channelID, "Hello " + message.author.username);
+    }
 };
-
 #endif
