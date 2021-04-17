@@ -1,10 +1,14 @@
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <dlfcn.h>
 #include <unordered_map>
 
 #include "sleepy_discord/sleepy_discord.h"
 #include "discord_class.h"
 
-extern void* loadModule(char* module_name);
-extern int unloadModule(char* module_name);
+void* loadModule(char* module_name);
+int unloadModule(char* module_name);
 
 std::unordered_map<std::string, void*> fptr_map;
 std::unordered_map<std::string, void*> module_map;
@@ -59,4 +63,20 @@ void AdminClientClass::onMessage(SleepyDiscord::Message message) {
     }
 }
 
+void* loadModule(char* module_name){
+        char path[512] = "modules/";
+        strcat(path, module_name);
+        strcat(path, ".so");
+        void* handle = dlopen(path, RTLD_NOW | RTLD_GLOBAL);
+        std::string m_name = module_name;
+        if(handle != NULL)
+            module_map[m_name] = handle;
+        return handle;
+}
+
+int unloadModule(char* module_name) {
+        std::string m_name = module_name;
+        int retval = dlclose(module_map.at(m_name));
+        return retval;
+}
 
