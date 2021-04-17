@@ -4,9 +4,6 @@
 class MyClientClass : public SleepyDiscord::DiscordClient {
 public:
     using SleepyDiscord::DiscordClient::DiscordClient;
-    void onMessage(SleepyDiscord::Message message) override {
-        if(message.startsWith("!admin"))
-            sendMessage(message.channelID, "Hello " + message.author.username);
-    }
+    void onMessage(SleepyDiscord::Message message);
 };
 #endif
