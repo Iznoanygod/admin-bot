@@ -1,3 +1,0 @@
-/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/rebuild_cache.dir
-/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/edit_cache.dir
-/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/websocketpp-download.dir
