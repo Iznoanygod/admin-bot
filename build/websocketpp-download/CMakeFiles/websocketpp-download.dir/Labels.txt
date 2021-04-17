@@ -1,0 +1,13 @@
+# Target labels
+ websocketpp-download
+# Source files and their labels
+/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/websocketpp-download
+/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/websocketpp-download.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/CMakeFiles/websocketpp-download-complete.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-install.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-mkdir.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-download.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-patch.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-configure.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-build.rule
+/home/andrew/Documents/admin-bot/build/websocketpp-download/websocketpp-download-prefix/src/websocketpp-download-stamp/websocketpp-download-test.rule

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/adminbot.dir/main.cpp.o -o adminbot  deps/sleepy-discord/sleepy_discord/libsleepy-discord.a -ldl lib/libcpr.a /usr/lib/libcurl.so -lssl -lcrypto -pthread 
