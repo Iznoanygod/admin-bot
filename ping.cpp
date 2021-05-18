@@ -6,6 +6,7 @@
 #include "sleepy_discord/sleepy_discord.h"
 #include "discord_class.h"
 #include "globals.h"
+#include <time.h>
 
 void ping(SleepyDiscord::Message message, char* arg);
 
@@ -18,7 +19,16 @@ void constructor(){
 }
 
 void ping(SleepyDiscord::Message message, char* arg){
-    client->sendMessage(message.channelID, "Pong");
+    SleepyDiscord::Message pong_message = client->sendMessage(message.channelID, ".");
+    std::string time_0 = message.timestamp;
+    std::string time_1 = pong_message.timestamp;
+    long double _time_0, _time_1;
+    printf("%s\n%s\n", time_0.c_str(), time_1.c_str());
+    sscanf(time_0.c_str(), "%*d-%*d-%*dT%*d:%*d:%Lf+%*d:%*d", &_time_0);
+    sscanf(time_1.c_str(), "%*d-%*d-%*dT%*d:%*d:%Lf+%*d:%*d", &_time_1);
+    char buff[1024];
+    sprintf(buff, "Pong! It took %Lfs for that response!", _time_1 - _time_0);
+    client->editMessage(message.channelID, pong_message.ID, buff);
 }
 
 __attribute__((destructor))

@@ -17,3 +17,10 @@ target_link_libraries(adminbot dl)
 target_link_libraries(adminbot config)
 
 target_link_libraries(ping globals)
+
+set_target_properties(ping PROPERTIES PREFIX "")
+set_target_properties(ping PROPERTIES OUTPUT_NAME "ping")
+set_target_properties(ping
+	PROPERTIES
+	LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/modules"
+)
