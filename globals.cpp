@@ -25,6 +25,8 @@ void AdminClientClass::onMessage(SleepyDiscord::Message message) {
         void* handle = loadModule((char*)module_name.c_str());
         if(handle == NULL){
             sendMessage(message.channelID, "Module failed to load");
+            char* error = dlerror();
+            printf("%s\n", error);
             return;
         }
         module_map[module_name] = handle;
@@ -49,7 +51,7 @@ void AdminClientClass::onMessage(SleepyDiscord::Message message) {
     }
     if(message.startsWith("!")){
         std::string contents = message.content;
-        std::string command = contents.substr(1, contents.find(" "));
+        std::string command = contents.substr(1, contents.find(" ")-1);
         std::string args = contents.substr(contents.find(" ")+1);
         if(!fptr_map.count(command)){
             sendMessage(message.channelID, command + ": Command not found");
